@@ -9,12 +9,16 @@ import com.codecool.shop.model.*;
 import spark.Request;
 import spark.Response;
 import spark.template.thymeleaf.ThymeleafTemplateEngine;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.*;
 
 public class Main {
 
     public static void main(String[] args) {
+        Logger root = (Logger)LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
+        root.debug("DEBUG MODE: "+root.isDebugEnabled());
 
         // default server settings
         exception(Exception.class, (e, req, res) -> e.printStackTrace());
